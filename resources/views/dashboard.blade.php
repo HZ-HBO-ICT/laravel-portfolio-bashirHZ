@@ -1,6 +1,3 @@
-<?php
-use App\Http\Controllers\ProfileController;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,10 +5,9 @@ use App\Http\Controllers\ProfileController;
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css" />
@@ -24,7 +20,7 @@ use App\Http\Controllers\ProfileController;
         <div class="conatiner-fluid">
             <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light" aria-label="Main navigation">
                 <img class="d-inline-block align-top mb-0" src="img/hz.png" alt="HZ-logo" width="50" height="50" />
-                <a class="navbar-brand mb-0" href="#"> Bashir Ahmed </a>
+                <a class="navbar-brand mb-0 h1" href="#"> Bashir Ahmed </a>
                 <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -34,13 +30,13 @@ use App\Http\Controllers\ProfileController;
                 <div class=" navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-justified ms-auto me-5 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/about">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                            <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/blog">Blog</a>
@@ -48,7 +44,6 @@ use App\Http\Controllers\ProfileController;
                         <li class="nav-item">
                             <a class="nav-link" href="/faq">FAQ</a>
                         </li>
-                        <!-- Dropdown Links -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                                aria-expanded="false">
@@ -76,45 +71,107 @@ use App\Http\Controllers\ProfileController;
     </header>
     <!-- /HEADER+NAVIGATION -->
     <!-- MAIN CONTENT -->
-    <main class="mt-0">
-        <div class="container">
-            <!-- Intro -->
-            <div class="p-5 mb-5 align-items-center">
-                <div class="container-fluid py-5">
-                    <h1 class="display-1 text-center fw-bolder ">Welcome!</h1>
-                    <p class="col fs-4 text-center intro-p">I'm Bashir this is my Portfolio website. HBO-ICT student at <a
-                            class="text-decoration-none fst-italic hz-link" href="http://hz.nl" target="_blank">HZ University of
-                            Applied Sciences.</a></p>
-                </div>
+    <main class="mt-5">
+        <!-- Page Title -->
+        <div class="mb-5 align-items-center">
+            <div class="container-fluid py-5">
+                <h1 class="display-1 fw-bolder text-center">My Study Monitor</h1>
             </div>
-            <!-- Items -->
-            <div class="row align-items-md-stretch">
-                <!-- Item 1 -->
-                <div class="col-md">
-                    <div class="h-100 p-5 bg-light rounded-3">
-                        <h2>Why HBO-ICT</h2>
-                        <p>In my previous education I have experienced a little bit of HTML and CSS for a year and ever since I
-                            have been interested in coding/programming. I know ICT is more than just programming but it is one of
-                            the core aspects and I am willing to expand my knowledge on this subject. I chose this course because
-                            majority of it is practical, implenting what you learnt directly to projects and that suits my learning
-                            style</p>
-                        <p>Check out my profile my page!</p>
-                        <a href="/about" class="btn btn-outline-secondary">Profile</a>
-                    </div>
-                </div>
-                <!-- /Item1 -->
-                <!-- Item 2 -->
-                <div class="col-md">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>My Motivation</h2>
-                        <p>My motivation for choosing this course is that it will help me improve my creativity, self-discipline,
-                            and communication through programming. And because ICT is so vast, you learn a lot of new things every
-                            day and keep evolving. I have always been interested in ICT and programming all my life.</p>
-                        <p>Check out my Blog for more!</p>
-                        <a href="/blog" class="btn btn-outline-secondary">Blog</a>
-                    </div>
-                </div>
-                <!-- /Item 2 -->
+        </div>
+        <!-- Page Title -->
+        <div class="container">
+            <!-- Progress bar -->
+            <h4>NBSA:</h4>
+            <div class="progress" data-label="0%" style="--width: 0"></div>
+            <!-- /Progress bar -->
+            <div class="table-responsive table-bordered mt-5 rounded">
+                <table class="table table-hover dashboard-table table-dark ">
+                    <thead>
+                    <tr>
+                        <th scope="col">Quartile</th>
+                        <th scope="col">Courses</th>
+                        <th scope="col">EC</th>
+                        <th scope="col">Exam</th>
+                        <th scope="col">Grade</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td rowspan="3" rows>1</td>
+                        <td>Programme and Career Orientation</td>
+                        <td>2.5</td>
+                        <td>Assesment</td>
+                        <td>8.6</td>
+                    </tr>
+
+                    <tr>
+                        <td>Computer Science Basics</td>
+                        <td>5</td>
+                        <td>Written Exam</td>
+                        <td>7.0</td>
+                    </tr>
+
+                    <tr>
+                        <td>Programming Basics</td>
+                        <td>5</td>
+                        <td>Case Study Exam</td>
+                        <td>9.0</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Object Oriented Programming</td>
+                        <td>10</td>
+                        <td>Case Study & Project</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td rowspan="2">3</td>
+                        <td>Framework Development 1</td>
+                        <td>5</td>
+                        <td>Case Study</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td>Framework Project 1</td>
+                        <td>7.5</td>
+                        <td>Project, Assesment & Report</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>Framework Project 2</td>
+                        <td>10</td>
+                        <td>Portofolio, Project & Assesment</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td>Entire Year</td>
+                        <td>Personal Professional Development</td>
+                        <td>12.5</td>
+                        <td>Portofolio</td>
+                        <td>-</td>
+                    </tr>
+
+                    <tr>
+                        <td>Whenever</td>
+                        <td>Personality 1</td>
+                        <td>1.25</td>
+                        <td>Portofolio</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Whenever</td>
+                        <td>Personality 2</td>
+                        <td>1.25</td>
+                        <td>Portofolio</td>
+                        <td>-</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
