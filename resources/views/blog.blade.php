@@ -12,9 +12,9 @@
 </head>
 <body>
 <div class="container-fluid">
-    <!-- HEADER+NAVIGATITION -->
+    <!-- HEADER+NAVIGATION -->
     <header>
-        <div class="conatiner-fluid">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light" aria-label="Main navigation">
                 <img class="d-inline-block align-top mb-0" src="img/hz.png" alt="HZ-logo" width="50" height="50"/>
                 <a class="navbar-brand mb-0" href="#"> Bashir Ahmed </a>
@@ -82,12 +82,7 @@
                             various presentations and done some research. Interested?
                             Click the button below.
                         </p>
-                        <a
-                            href="/prof"
-                            class="btn btn-primary"
-                            target="_blank"
-                        >Read More</a
-                        >
+                        <a href="/prof" class="btn btn-primary" target="_blank">Read More</a>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated never</small>

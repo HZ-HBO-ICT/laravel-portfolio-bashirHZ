@@ -70,152 +70,33 @@
         <div class="container">
             <div class="row">
                 <div class="accordion accordion-flush" id="accordionFlushExample">
-                    <!-- ITEM 1 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                            <!-- QUESTION 1 -->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Q: How can you print a document from your laptop at HZ?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <!-- Answer 1 -->
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>
-                                        Go to the website
-                                        <a href="http://print.hz.nl">print.hz.nl</a>
-                                    </li>
-                                    <li>Enter your HZ username and password and Login</li>
-                                    <li>
-                                        Click on Choose File and select the file to print.
-                                    </li>
-                                    <li>
-                                        Click on Next. Repeat the previous step if you want to add more
-                                        documents.
-                                    </li>
-                                    <li>
-                                        Wait until the document has been processed and then click on the
-                                        Advanced option to state whether you want double-sided or black
-                                        &amp; white printing.
-                                    </li>
-                                    <li>
-                                        Select the HZ printer to print your document(s).
-                                    </li>
-                                </ul>
-                                Once the print job has been requested you must login using your HZ pass on the
-                                RFID reader next to the printer. Next, select the printer option Print /
-                                Afdrukken. In the menu, select the printer to where the job has been
-                                sent. Next, you can see which printer job is ready to be printed. The print job is
-                                completed provided there is sufficient credit on your printing account. When the
-                                printing is completed, press Stop on the RFID reader, followed by Logout.
+                    <ul>
+                        <!-- ITEM -->
+                    @foreach($faqs as $faq)
+                            <div class="accordion-item">
+                                <!-- QUESTION -->
+                                <h2 class="accordion-header" id="flush-heading{{ $faq->id }}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapse{{ $faq->id }}" aria-expanded="false"
+                                            aria-controls="flush-collapse{{ $faq->id }}">
+                                        {{ $faq->question }}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapse{{ $faq->id }}" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-heading{{ $faq->id }}" data-bs-parent="#accordionFlushExample">
+                                    <!-- ANSWER -->
+                                    <div class="accordion-body">
+                                        {{ $faq->answer }}
+                                        @if($faq->link)
+                                            <a
+                                                href="{{ $faq->link }}">link</a>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- ITEM 2 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingTwo">
-                            <!-- QUESTION 2 -->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                Q: How can you scan a document a send it to your laptop at HZ?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                            <!-- ANSWER 2 -->
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>
-                                        Make sure you have at least €0.07 credit. Although scanning is
-                                        free, you must have this amount of credit on your HZ pass.
-                                    </li>
-                                    <li>
-                                        Register using your HZ pass on the RFID reader next to the printer.
-                                    </li>
-                                    <li>In the printer menu, select option Scan.</li>
-                                    <li>Lay the original sheet on the feeder or glass plate.</li>
-                                    <li>Press Scan and Send.</li>
-                                    <li>Press Scan to me.</li>
-                                    <li>Press Yes.</li>
-                                    <li>Press the Start button.</li>
-                                    <li>
-                                        Press the green Start button on the printer to scan page by
-                                        page. Once this is ready, press Start Sending.
-                                    </li>
-                                </ul>
-                                <p>
-                                    When scanning is completed, press Stop on the printer, followed by
-                                    Logout.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ITEM 3 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingThree">
-                            <!-- QUESTION 3 -->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                Q: What do you need to do when you are sick / show symptoms of coronavirus?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                            <!-- ANSWER 3 -->
-                            <div class="accordion-body">A: Stay at home and inform your teachers if your sick try to recover from being sick and if you have to stay at home because of covid try to attend lectures online if possible.</div>
-                        </div>
-                    </div>
-                    <!-- ITEM 4 -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingFour">
-                            <!-- Question 4 -->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                                Q: How can you book a project space in one of the wings?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                            <!-- ANSWER 4 -->
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>
-                                        Go to
-                                        <a href="https://hzuniversity.topdesk.net/tas/public/ssp/content/page/locationreservationplanner?from=f56d5230-ffe5-4ab7-ad47-ec9374b5ec34" target="_blank">this
-                                            link</a>
-                                    </li>
-                                    <li>Sign in with your HZ account</li>
-                                    <li>
-                                        Select the option type "meeting room" to see all meeting rooms
-                                        that are available for reservation.
-                                    </li>
-                                    <li>Select a room</li>
-                                    <li>Fill in your details</li>
-                                    <li>Confirm reservation</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ITEM 5 -->
-                    <div class="accordion-item">
-                        <!-- QUESTION 5 -->
-                        <h2 class="accordion-header" id="flush-headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-                                Q: What are the instructions if you want to park your car at the HZ parking lot?
-                            </button>
-                        </h2>
-                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                            <!-- ANSWER 5 -->
-                            <div class="accordion-body">
-                                <strong>Free parking</strong><br>
-                                Free parking is available in the PZEM parking lot at Poelendaelesingel 10 in Middelburg. This is a few minutes walk away from the HZ. Unfortunately, it is not possible to park directly at the HZ building. However, there is a disabled parking space available right next to the HZ building at Het Groene Woud 1-3.
-                                <br>
-                                <strong><br>Poelendaelesingel parking lot</strong><br>
-                                There is a bell at the barriers of the Poelendaelesingel parking lot. After passing through the barrier, follow the signs to the HZ parking lots, marked with a white sign with the HZ logo.
-                                <br>
-                                <strong><br>With HZ pass or by ringing the bell</strong><br>
-                                Students and employees can only enter the premises on presentation of an HZ pass, guests can ring the bell at the barrier.
-                                <br>
-                                <strong><br>Walking route to the HZ location</strong><br>
-                                Please note: if you park at the Poelendaelesingel, you cannot reach the HZ via the pedestrian tunnel because of the construction work for the Joint Research Center Zeeland. You can cross at the traffic lights at the intersection -Poelendaelesingel/Het Groene Woud.
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    </ul>
+
                 </div>
             </div>
         </div>

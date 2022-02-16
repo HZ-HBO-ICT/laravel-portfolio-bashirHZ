@@ -1,6 +1,3 @@
-<?php
-use App\Http\Controllers\ProfileController;
-?>
 <!DOCTYPE html>
 <html lang="en">
 
