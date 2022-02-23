@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProfileController;
@@ -26,6 +27,8 @@ Route::get('/', [WelcomeController::class, 'show']);
 Route::get('/about', [ProfileController::class, 'show']);
 Route::get('/blog', [BlogController::class, 'show']);
 Route::get('/posts/{post}', [PostsController::class, 'show']);
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+Route::get('/articles', [ArticlesController::class, 'index']);
 Route::get('/prof', [ProfController::class, 'show']);
 Route::get('/feedback', [FeedbackController::class, 'show']);
 Route::get('/dashboard', [DashboardController::class, 'show']);

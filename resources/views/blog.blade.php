@@ -23,7 +23,7 @@
                             various presentations and done some research. Interested?
                             Click the button below.
                         </p>
-                        <a href="/prof" class="btn btn-primary" target="_blank">Read More</a>
+                        <a href="/prof" class="btn btn-light btn-outline-secondary" target="_blank">Read More</a>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated never</small>
@@ -40,7 +40,7 @@
                         <p class="card-text">
                             Feedback after first assesment.
                         </p>
-                        <a href="/feedback" class="btn btn-primary" target="_blank">Read More</a>
+                        <a href="/feedback" class="btn btn-light btn-outline-secondary" target="_blank">Read More</a>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Last updated never</small>

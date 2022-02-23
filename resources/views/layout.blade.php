@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <header>
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light" aria-label="Main navigation">
-                <img class="d-inline-block align-top mb-0" src="img/hz.png" alt="HZ-logo" width="50" height="50" />
+                <img class="d-inline-block align-top mb-0" src="/img/hz.png" alt="HZ-logo" width="50" height="50" />
                 <a class="navbar-brand mb-0" href="#"> Bashir Ahmed </a>
                 <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -40,6 +40,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{Request::path() === 'blog' ? 'active' : ''}}" href="/blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{Request::path() === 'articles' ? 'active' : ''}}" href="/articles">Articles</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{Request::path() === 'faq' ? 'active' : ''}}" href="/faq">FAQ</a>
