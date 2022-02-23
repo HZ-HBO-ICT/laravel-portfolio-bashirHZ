@@ -5,22 +5,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
 
 <body>
-<div class="container-fluid">
-    <!-- HEADER+NAVIGATITION -->
+<!-- HEADER+NAVIGATITION -->
     <header>
-        <div class="conatiner-fluid">
+        <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-fixed-top navbar-light" aria-label="Main navigation">
-                <img class="d-inline-block align-top mb-0" src="img/hz.png" alt="HZ-logo" width="50" height="50" />
+                <img class="d-inline-block align-top mb-0" src="/img/hz.png" alt="HZ-logo" width="50" height="50" />
                 <a class="navbar-brand mb-0" href="#"> Bashir Ahmed </a>
                 <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,19 +30,22 @@
                 <div class=" navbar-collapse collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav nav-justified ms-auto me-5 mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link  {{Request::path() === '/' ? 'active' : ''}}" aria-current="page" href="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/about">Profile</a>
+                            <a class="nav-link {{Request::path() === 'about' ? 'active' : ''}}" href="/about">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                            <a class="nav-link {{Request::path() === 'dashboard' ? 'active' : ''}}" href="/dashboard">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/blog">Blog</a>
+                            <a class="nav-link {{Request::path() === 'blog' ? 'active' : ''}}" href="/blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/faq">FAQ</a>
+                            <a class="nav-link {{Request::path() === 'articles' ? 'active' : ''}}" href="/articles">Articles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{Request::path() === 'faq' ? 'active' : ''}}" href="/faq">FAQ</a>
                         </li>
                         <!-- Dropdown Links -->
                         <li class="nav-item dropdown">
@@ -73,16 +75,13 @@
     </header>
     <!-- /HEADER+NAVIGATION -->
     <!-- MAIN CONTENT -->
-    <main class="mt-0">
-        <h1>My Blog Post</h1>
-        <p> {{ $post->body }} </p>
-    </main>
+        @yield('content')
     <!-- /MAIN CONTENT -->
-</div>
+
 <!-- FOOTER -->
 <div class="footer sticky-bottom py-3">
     <p class="text-center text-muted" id="copyright">
-        Copyright © 2021 Bashir Ahmed. All rights reserved.
+        Copyright © 2022 Bashir Ahmed. All rights reserved.
     </p>
 </div>
 <!-- /FOOTER -->
@@ -95,4 +94,3 @@
 </body>
 
 </html>
-
